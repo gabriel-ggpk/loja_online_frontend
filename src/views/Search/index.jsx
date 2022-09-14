@@ -11,7 +11,7 @@ export default function Search() {
     const [search, setSearch] = useState("")
     const [searchResult, setSearchResult] = useState()
     function searchProducts(){
-        const promise = axios.get(`https://mock-api.driven.com.br/api/v4/driven-plus/products?name=${search}`)
+        const promise = axios.get(`backend${search}`)
         promise.then((res) => {
             setSearchResult(res.data)
         })
