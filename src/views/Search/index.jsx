@@ -8,6 +8,7 @@ import {BsCart2} from "react-icons/bs"
 import { Link, Navigate, useNavigate } from "react-router-dom";
 
 export default function Search() {
+    const navigate = useNavigate();
     const [search, setSearch] = useState("")
     const [searchResult, setSearchResult] = useState()
     function searchProducts(){
@@ -31,7 +32,7 @@ export default function Search() {
           <p>Buscar</p> 
         </Button></SearchContainer>
         
-        <BsCart2 size={35}/>
+        <BsCart2 size={35} onClick={navigate("/cart")}/>
     </Container>
       <SearchResult props={searchResult}></SearchResult>
       </>
