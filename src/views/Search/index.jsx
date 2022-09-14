@@ -8,14 +8,10 @@ import {BsCart2} from "react-icons/bs"
 import { Link, Navigate, useNavigate } from "react-router-dom";
 
 export default function Search() {
-    const [search, setSearch] = useState()
+    const [search, setSearch] = useState("")
     const [searchResult, setSearchResult] = useState()
-    function handleForm(event) {
-        setSearch({ ...search, [event.target.name]: event.target.value });
-        event.preventDefault();
-      }
     function searchProducts(){
-        const promise = axios.get(`https://mock-api.driven.com.br/api/v4/driven-plus/products?name=${search.search}`)
+        const promise = axios.get(`https://mock-api.driven.com.br/api/v4/driven-plus/products?name=${search}`)
         promise.then((res) => {
             setSearchResult(res.data)
         })
@@ -24,11 +20,11 @@ export default function Search() {
         <>
     <Container>
       <SearchContainer><Input
-          name="Busca"
+          name="busca"
           type="text"
           placeholder="Buscar por produtos"
           value={search}
-          onChange={handleForm}
+          onChange={(e) => setSearch(e.target.value)}
           small = {true}
         ></Input>
         <Button type="submit" onClick={searchProducts} small={true}>
@@ -37,7 +33,7 @@ export default function Search() {
         
         <BsCart2 size={35}/>
     </Container>
-      <SearchResult></SearchResult>
+      <SearchResult props={searchResult}></SearchResult>
       </>
       )
     
