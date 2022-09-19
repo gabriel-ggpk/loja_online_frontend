@@ -17,16 +17,18 @@ export default function LogIn() {
   function sendForm(event) {
     event.preventDefault();
 
-    /*const body = { email, password };
+    const body = { email, password };
     const promise = axios.post(
       "backend link",
       body
     );
     promise.then((res) => {
-        navigate("/home")
+        navigate("/search");
     });
-    promise.catch((error) => console.log(error.response));*/
-    navigate("/search");
+    promise.catch((error) => {
+      console.log(error.response)
+      navigate("/search")
+    });
   }
   return (
     <>

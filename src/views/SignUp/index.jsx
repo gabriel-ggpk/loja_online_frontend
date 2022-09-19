@@ -12,17 +12,21 @@ export default function Register() {
     password: "",
   });
   function sendForm() {
-    /*const body = {
+    const body = {
       ...newUser,
     };
     const promise = axios.post(
-      "https://mock-api.driven.com.br/api/v4/driven-plus/auth/sign-up",
+      "backend sign up link",
       body
-    );*/
-   // promise.then((res) => {
+    );
+    promise.then((res) => {
       navigate("/");
       
-    //});
+    });
+    promise.catch((error) => {
+      console.log(error.response);
+      navigate("/");
+    });
     
   }
   function handleForm(event) {

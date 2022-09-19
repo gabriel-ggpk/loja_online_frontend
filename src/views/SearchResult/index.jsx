@@ -11,7 +11,10 @@ export default function SearchResult({searchResult}) {
         {"url": "https://www.bompreco.com.br/feijao-carioca-tipo-1-kicaldo-1kg-7896116900029/p", "name": "Feij\u00e3o Carioca Kicaldo Pacote 1Kg", "price": "R$\u00a09,29"},
         {"url": "https://www.bompreco.com.br/feijao-carioca-tipo-1-turquesa-1kg-7898272919082/p", "name": "Feij\u00e3o Carioca Turquesa 1kg", "price": "R$\u00a08,99"},
         {"url": "https://www.bompreco.com.br/feijao-preto-tipo-1-camil-1kg-7896006751113/p", "name": "Feij\u00e3o Preto Camil Pacote 1kg", "price": "R$\u00a08,59"},
-        {"url": "https://www.bompreco.com.br/feijao-preto-tipo-1-turquesa-1kg-7898272919129/p", "name": "Feij\u00e3o Preto Turquesa 1kg", "price": "R$\u00a08,19"},   ]},
+        {"url": "https://www.bompreco.com.br/feijao-preto-tipo-1-turquesa-1kg-7898272919129/p", "name": "Feij\u00e3o Preto Turquesa 1kg", "price": "R$\u00a08,19"},
+        {"url": "https://www.bompreco.com.br/feijao-preto-tipo-1-turquesa-1kg-7898272919129/p", "name": "Feij\u00e3o Preto Turquesa 1kg", "price": "R$\u00a08,19"},
+        {"url": "https://www.bompreco.com.br/feijao-preto-tipo-1-turquesa-1kg-7898272919129/p", "name": "Feij\u00e3o Preto Turquesa 1kg", "price": "R$\u00a08,19"},
+       ]},
         {
             name: "Extra",
             products: [
@@ -55,14 +58,9 @@ export default function SearchResult({searchResult}) {
 const ListContainer = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
     width: 33%;
     height: 100%;
-    display: flex;
     justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
     padding-left: 10px;
     padding-right: 10px;
 `;
@@ -90,7 +88,10 @@ const ProductContainer = styled.div`
     }
 `;
 const Container = styled.div`
+    position: relative;
+    top: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;`
+
+    `

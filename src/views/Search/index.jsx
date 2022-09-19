@@ -5,17 +5,17 @@ import SearchResult from "../SearchResult";
 import axios from "axios";
 import { useState } from "react";
 import {BsCart2} from "react-icons/bs"
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Search() {
-    const navigate = useNavigate();
     const [search, setSearch] = useState("")
     const [searchResult, setSearchResult] = useState()
     function searchProducts(){
-        const promise = axios.get(`backend${search}`)
+        const promise = axios.get(`localhost:5000/search?pesquisa=${search}`)
         promise.then((res) => {
             setSearchResult(res.data)
         })
+        promise.catch((error) => alert("funcionalidade indisponivel no momento"))
     }
     return(
         <>
@@ -32,7 +32,7 @@ export default function Search() {
           <p>Buscar</p> 
         </Button></SearchContainer>
         
-        <BsCart2 size={35} onClick={navigate("/cart")}/>
+        <Link to ={"/cart"}><BsCart2 size={35} /></Link>
     </Container>
       <SearchResult props={searchResult}></SearchResult>
       </>
