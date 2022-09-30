@@ -19,15 +19,15 @@ export default function LogIn() {
 
     const body = { email, password };
     const promise = axios.post(
-      "backend link",
+      "http://localhost:5000/login",
       body
     );
     promise.then((res) => {
         navigate("/search");
     });
     promise.catch((error) => {
-      console.log(error.response)
-      navigate("/search")
+      console.log(error)
+      alert("Email ou senha incorretos");
     });
   }
   return (

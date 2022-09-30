@@ -16,7 +16,7 @@ export default function Register() {
       ...newUser,
     };
     const promise = axios.post(
-      "backend sign up link",
+      "http://localhost:5000/signup",
       body
     );
     promise.then((res) => {
@@ -24,8 +24,8 @@ export default function Register() {
       
     });
     promise.catch((error) => {
-      console.log(error.response);
-      navigate("/");
+      console.log(error);
+      alert("não foi possivel cadastrar");
     });
     
   }

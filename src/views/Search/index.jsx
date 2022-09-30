@@ -9,9 +9,9 @@ import { Link } from "react-router-dom";
 
 export default function Search() {
     const [search, setSearch] = useState("")
-    const [searchResult, setSearchResult] = useState()
+    const [searchResult, setSearchResult] = useState(null)
     function searchProducts(){
-        const promise = axios.get(`localhost:5000/search?pesquisa=${search}`)
+        const promise = axios.get(`http://localhost:5000/search?pesquisa=${search}`)
         promise.then((res) => {
             setSearchResult(res.data)
         })
@@ -34,7 +34,7 @@ export default function Search() {
         
         <Link to ={"/cart"}><BsCart2 size={35} /></Link>
     </Container>
-      <SearchResult props={searchResult}></SearchResult>
+      <SearchResult searchResult={searchResult}></SearchResult>
       </>
       )
     
